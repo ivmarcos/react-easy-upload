@@ -10,8 +10,8 @@ $ npm install react-easy-upload
 
 ## Examples
 
-⋅⋅* Basic - https://codesandbox.io/s/rr2ym0p49q
-⋅⋅* Image - https://codesandbox.io/s/94jy5n6zjo
+* Basic - https://codesandbox.io/s/rr2ym0p49q
+* Image - https://codesandbox.io/s/94jy5n6zjo
 
 ## Usage
 
