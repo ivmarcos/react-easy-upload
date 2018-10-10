@@ -12,6 +12,7 @@ $ npm install react-easy-upload
 
 * Basic - https://codesandbox.io/s/rr2ym0p49q
 * Image - https://codesandbox.io/s/94jy5n6zjo
+* Size validation - https://codesandbox.io/s/0qmok52z5n
 
 ## Usage
 
