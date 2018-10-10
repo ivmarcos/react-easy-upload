@@ -38,6 +38,6 @@ $ npm install react-upload
 
 |Prop name  |Type                                            |Default    |Description
 |-----------|------------------------------------------------|-----------|---------------------------------------
-|onUpload   |`function(files: File[], event: SyntheticEvent)`|           | Callback called when user does an upload
+|onUpload   |`function(files: File[], event: SyntheticEvent)`|           | Callback when user uploads
 
 *All other props are passed to raw input component.*
