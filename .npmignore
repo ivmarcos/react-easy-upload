@@ -9,3 +9,8 @@ test
 .codeclimate.yml
 *.log
 *.env
+.eslintrc
+.eslintignore
+.prettierignore
+.prettierrc
+styleguide.config.js
