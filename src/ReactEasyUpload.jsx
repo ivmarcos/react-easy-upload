@@ -15,9 +15,11 @@ class ReactEasyUpload extends PureComponent {
     super(props);
     this.requestUpload = this.requestUpload.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
+    this.isValid = this.isValid.bind(this);
     this.inputRef = React.createRef();
     this.state = {
-      files: []
+      files: [],
+      valid: true
     };
   }
 
@@ -25,20 +27,33 @@ class ReactEasyUpload extends PureComponent {
     this.inputRef.current.click();
   }
 
+  isValid(files) {
+    const { maxSize } = this.props;
+    if (maxSize === undefined) return true;
+    for (const i in files) {
+      if (files[i].size > maxSize) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   handleUpload(e) {
     const { files } = e.target;
     const { onUpload } = this.props;
+    const valid = this.isValid(files);
     this.setState({
-      files
+      files,
+      valid
     });
-    if (onUpload) {
+    if (onUpload && valid) {
       onUpload(files, e);
     }
   }
 
   render() {
-    const { children, onUpload, ...rest } = this.props;
-    const { files } = this.state;
+    const { children, onUpload, maxSize, ...rest } = this.props;
+    const { files, valid } = this.state;
     return (
       <Fragment>
         <input
@@ -48,13 +63,15 @@ class ReactEasyUpload extends PureComponent {
           onChange={this.handleUpload}
           {...rest}
         />
-        {children({ requestUpload: this.requestUpload, files })}
+        {children({ requestUpload: this.requestUpload, files, valid })}
       </Fragment>
     );
   }
 }
 
-ReactEasyUpload.propTypes = {};
+ReactEasyUpload.propTypes = {
+  maxSize: PropTypes.number
+};
 
 ReactEasyUpload.defaultProps = {};
 
