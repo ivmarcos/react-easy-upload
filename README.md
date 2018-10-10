@@ -10,8 +10,22 @@ $ npm install react-upload
 
 ## Usage
 
+**Basic**
+
 ```jsx
-<ReactUpload>
+<ReactUpload onUpload={files => console.log('files uploaded', files)}>
+    {({ files, requestUpload }) => (
+        <div style={{width: 500, height: 500, background: 'red'}} onClick={requestUpload}>
+            {files.length ? files[0].name : 'no file selected'}
+        </div>
+    )}
+</ReactUpload>
+```
+
+**All options**
+
+```jsx
+<ReactUpload onUpload={files => console.log('files uploaded', files)} multiple required accept="image/*">
     {({ files, requestUpload }) => (
         <div style={{width: 500, height: 500, background: 'red'}} onClick={requestUpload}>
             {files.length ? files[0].name : 'no file selected'}
