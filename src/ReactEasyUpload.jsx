@@ -10,7 +10,7 @@ const styles = {
   }
 };
 
-class ReactUpload extends PureComponent {
+class ReactEasyUpload extends PureComponent {
   constructor(props) {
     super(props);
     this.requestUpload = this.requestUpload.bind(this);
@@ -54,8 +54,8 @@ class ReactUpload extends PureComponent {
   }
 }
 
-ReactUpload.propTypes = {};
+ReactEasyUpload.propTypes = {};
 
-ReactUpload.defaultProps = {};
+ReactEasyUpload.defaultProps = {};
 
-export default ReactUpload;
+export default ReactEasyUpload;

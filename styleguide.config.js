@@ -9,7 +9,7 @@ module.exports = {
   serverHost: 'localhost',
   serverPort: 6061,
   styleguideDir: 'public',
-  title: 'React Uploa',
+  title: 'React Easy Upload',
   styleguideComponents: {
     Wrapper: path.join(__dirname, 'src/Wrapper')
   },

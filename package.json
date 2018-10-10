@@ -1,30 +1,32 @@
 {
-  "name": "react-upload",
+  "name": "react-easy-upload",
   "version": "0.0.1",
   "description": "Simplifying upload for react",
   "main": "index.js",
   "keywords": [
     "upload",
+    "easy",
+    "simple",
     "react"
   ],
   "scripts": {
     "start": "styleguidist server",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "build": "babel ./src/ReactUpload.jsx --out-file ./lib/index.js",
+    "build": "babel ./src/ReactEasyUpload.jsx --out-file ./lib/index.js",
     "release": "yarn version --new-version patch",
     "preversion": "yarn test",
     "postversion": "git push"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivmarcos/react-upload.git"
+    "url": "git+https://github.com/ivmarcos/react-easy-upload.git"
   },
   "author": "Marcos Andrei Ivanechtchuk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ivmarcos/react-upload/issues"
+    "url": "https://github.com/ivmarcos/react-easy-upload/issues"
   },
-  "homepage": "https://github.com/ivmarcos/react-upload#readme",
+  "homepage": "https://github.com/ivmarcos/react-easy-upload#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.2",

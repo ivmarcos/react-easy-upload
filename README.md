@@ -5,7 +5,7 @@ Simplifying upload for React. No dependencies.
 ## Install
 
 ```
-$ npm install react-upload
+$ npm install react-easy-upload
 ```
 
 ## Usage
@@ -13,25 +13,34 @@ $ npm install react-upload
 **Basic**
 
 ```jsx
-<ReactUpload onUpload={files => console.log('files uploaded', files)}>
+
+import Upload from 'react-easy-upload'
+
+...
+
+<Upload onUpload={files => console.log('files uploaded', files)}>
     {({ files, requestUpload }) => (
         <div style={{width: 500, height: 500, background: 'red'}} onClick={requestUpload}>
             {files.length ? files[0].name : 'no file selected'}
         </div>
     )}
-</ReactUpload>
+</Upload>
 ```
 
 **All options**
 
 ```jsx
-<ReactUpload onUpload={files => console.log('files uploaded', files)} multiple required accept="image/*">
+import Upload from 'react-easy-upload'
+
+...
+
+<Upload onUpload={files => console.log('files uploaded', files)} multiple required accept="image/*">
     {({ files, requestUpload }) => (
         <div style={{width: 500, height: 500, background: 'red'}} onClick={requestUpload}>
             {files.length ? files[0].name : 'no file selected'}
         </div>
     )}
-</ReactUpload>
+</Upload>
 ```
 
 ## Props
