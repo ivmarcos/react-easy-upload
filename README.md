@@ -10,8 +10,6 @@ $ npm install react-upload
 
 ## Usage
 
-**Using inner target ref**
-
 ```jsx
 <ReactUpload>
     {({ files, requestUpload }) => (
