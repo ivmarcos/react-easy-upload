@@ -1,4 +1,4 @@
-# React Upload
+# React Easy Upload
 
 Simplifying upload for React. No dependencies.
 
