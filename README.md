@@ -81,5 +81,5 @@ const BoxUpload = withUpload(Box);
 |onUpload   |`function(files: File[], event: SyntheticEvent)`|           | Callback when user uploads
 |maxSize    |`number`                                        |           | Max size in bytes for each file on upload
 |accept     |`string`                                        |           | Which files to accept. [See more](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Limiting_accepted_file_types)
-|multiple   |`boolean`                                       |   false   | True to accept multiple files
-|required   |`boolean`                                       |   false   | True to define as required 
+|multiple   |`boolean`                                       |   `false`   | `true` to accept multiple files
+|required   |`boolean`                                       |   `false`   | `true` to define as required 
