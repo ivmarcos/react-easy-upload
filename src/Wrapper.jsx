@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Wrapper = ({children}) => children;
+const Wrapper = ({ children }) => children;
 
-Wrapper.propTypes = {
-    
-};
+Wrapper.propTypes = {};
 
 export default Wrapper;

@@ -6,8 +6,8 @@ const styles = {
     visibility: 'hidden',
     height: 0,
     width: 0,
-    position: 'fixed'
-  }
+    position: 'fixed',
+  },
 };
 
 class ReactEasyUpload extends PureComponent {
@@ -19,7 +19,7 @@ class ReactEasyUpload extends PureComponent {
     this.inputRef = React.createRef();
     this.state = {
       files: [],
-      valid: true
+      valid: true,
     };
   }
 
@@ -44,7 +44,7 @@ class ReactEasyUpload extends PureComponent {
     const valid = this.isValid(files);
     this.setState({
       files,
-      valid
+      valid,
     });
     if (onUpload && valid) {
       onUpload(files, e);
@@ -52,7 +52,7 @@ class ReactEasyUpload extends PureComponent {
   }
 
   render() {
-    const { children, onUpload, maxSize, ...rest } = this.props;
+    const { children, accept, multiple, required } = this.props;
     const { files, valid } = this.state;
     return (
       <Fragment>
@@ -61,7 +61,9 @@ class ReactEasyUpload extends PureComponent {
           style={styles.input}
           type="file"
           onChange={this.handleUpload}
-          {...rest}
+          multiple={multiple}
+          accept={accept}
+          required={required}
         />
         {children({ requestUpload: this.requestUpload, files, valid })}
       </Fragment>
@@ -70,9 +72,20 @@ class ReactEasyUpload extends PureComponent {
 }
 
 ReactEasyUpload.propTypes = {
-  maxSize: PropTypes.number
+  maxSize: PropTypes.number,
+  accept: PropTypes.string,
+  multiple: PropTypes.bool,
+  required: PropTypes.bool,
+  children: PropTypes.number.isRequired,
+  onUpload: PropTypes.func,
 };
 
-ReactEasyUpload.defaultProps = {};
+ReactEasyUpload.defaultProps = {
+  maxSize: undefined,
+  accept: undefined,
+  multiple: false,
+  required: false,
+  onUpload: undefined,
+};
 
 export default ReactEasyUpload;
