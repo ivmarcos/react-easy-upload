@@ -12,7 +12,7 @@
   "scripts": {
     "start": "styleguidist server",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "build": "babel ./src/ReactEasyUpload.jsx --out-file ./lib/index.js",
+    "build": "babel ./src -d ./lib --ignore ./src/Wrapper.jsx",
     "release": "yarn version --new-version patch",
     "preversion": "yarn test",
     "postversion": "git push"

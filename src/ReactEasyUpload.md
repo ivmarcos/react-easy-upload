@@ -24,3 +24,13 @@
     )}
 </ReactEasyUpload>
 ```
+
+**Using withUpload**
+```jsx
+const withUpload = require('./withUpload').default;
+const Box = ({requestUpload, files, valid}) => (
+    <div style={{width: 500, height: 500, background: valid ? 'green' : 'red'}} onClick={requestUpload}>{files.length ? files[0].name : 'no file selected'}</div>
+);
+const BoxUpload = withUpload(Box);
+<BoxUpload onUpload={files => console.log('files', files)} maxSize={1024*1024}/>
+```

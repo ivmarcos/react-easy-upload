@@ -40,13 +40,26 @@ import Upload from 'react-easy-upload'
 
 ...
 
-<Upload onUpload={files => console.log('files uploaded', files)} maxSize={1000000} multiple required accept="image/*">
+<Upload onUpload={files => console.log('files uploaded', files)} maxSize={1024*1024} multiple required accept="image/*">
     {({ files, requestUpload }) => (
         <div style={{width: 500, height: 500, background: 'red'}} onClick={requestUpload}>
             {files.length ? files[0].name : 'no file selected'}
         </div>
     )}
 </Upload>
+```
+
+**Using withUpload**
+```jsx
+import { withUpload } from 'react-easy-upload'
+
+...
+const Box = ({requestUpload, files, valid}) => (
+    <div style={{width: 500, height: 500, background: valid ? 'green' : 'red'}} onClick={requestUpload}>{files.length ? files[0].name : 'no file selected'}</div>
+);
+const BoxUpload = withUpload(Box);
+
+<BoxUpload onUpload={files => console.log('files', files)} maxSize={1024*1024}/>
 ```
 
 ## Props
